@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+
+{% block page_content %}
+    {{ parent() }}
+    <a class=" action-new btn btn-primary" href="{{ path('admin_import') }}" data-action-name="new">
+        <span class="action-label">Import Game Data</span>
+    </a>
+{% endblock %}

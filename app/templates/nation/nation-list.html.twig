@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NationController!{% endblock %}
+
+{% block body %}
+
+    {% for nation in nations %}
+        <a href="{{ path('tree', {id: nation.id}) }}">{{ nation.name }}</a><br />
+    {% endfor %}
+
+{% endblock %}

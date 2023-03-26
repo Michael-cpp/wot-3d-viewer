@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}tree{% endblock %}
+
+{% block body %}
+
+    {% for level in vehicles %}
+        <br />level:{{ loop.index }}<br />
+        {% for item in level %}
+            <a href="{{ path('viewer', {id: item.id}) }}">{{ item.name }}</a><br />
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

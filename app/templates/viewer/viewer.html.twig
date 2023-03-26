@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ViewerController!{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "{{ asset('assets/js/three.module.js') }}",
+          "controls": "{{ asset('assets/js/orbit.controls.js') }}",
+          "viewer": "{{ asset('assets/js/viewer.js') }}",
+          "ui-service": "{{ asset('assets/js/ui.service.js') }}"
+        }
+      }
+    </script>
+    <script type="module">
+        import UIService from 'ui-service';
+        let uiService = new UIService();
+    </script>
+{% endblock %}
+{% block body %}
+    <input type="hidden" name="vehicle" value="{{ vehicle|serialize(format = 'json') }}"/>
+{% endblock %}
